@@ -1,0 +1,36 @@
+1.	SQL Intro:
+SQL (Structured Query Language) is a standard programming language used to interact with relational databases. It is used to store, retrieve, update, and delete data. SQL is also used to create and modify database structures such as tables, views, and indexes.
+Example: 
+SELECT * FROM Employees;
+This query retrieves all the records from the Employees table.
+
+What is a Database?
+	A database is an organized collection of data that is stored and managed electronically. It allows users to efficiently store, retrieve, update, and manage data. Databases are used to handle large amounts of information in various applications such as websites, business systems, and applications.
+Example: 
+A customer database in an e-commerce website may store customer details like name, email, contact number, and purchase history.
+🆚 DBMS vs. RDBMS
+
++------------------+-----------------------------------+---------------------------------------------+
+| Feature          | DBMS                              | RDBMS                                       |
++------------------+-----------------------------------+---------------------------------------------+
+| Full Form        | Database Management System        | Relational Database Management System       |
+| Data Structure   | Files / Hierarchical / Object-based| Tables with rows and columns (relations)    |
+| Normalization    | Not enforced                      | Uses normalization to reduce redundancy     |
+| Relationships    | Not supported                     | Supports table relationships using keys     |
+| Example Systems  | File System, XML, CSV              | MySQL, PostgreSQL, Oracle, SQL Server       |
+| Multi-user Support| Limited                           | Full multi-user support                     |
++------------------+-----------------------------------+---------------------------------------------+
+
+
+What are the types of SQL commands? 
+SQL commands are categorized into five types based on their functionality: 
+DDL (Data Definition Language) – Defines the structure of the database Objects. 
+1.	CREATE, ALTER, DROP, TRUNCATE
+DML (Data Manipulation Language) – Manages data stored in the database. 
+2.	INSERT, UPDATE, DELETE, MERGE
+DCL (Data Control Language) – Controls access to the data. 
+3.	GRANT, REVOKE
+TCL (Transaction Control Language) – Manages transactions in the database.
+4.	COMMIT, ROLLBACK, SAVEPOINT
+DQL (Data Query Language) – Retrieves data from the database.
+5.	 SELECT

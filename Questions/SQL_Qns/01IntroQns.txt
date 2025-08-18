@@ -1,0 +1,9 @@
+1. What is SQL, and what are its main uses?
+
+2. Explain the difference between DBMS and RDBMS with examples.
+
+3. Which category of SQL commands would you use to create a new table?
+
+4. List the five categories of SQL commands and give one example of each.
+
+5. Write an SQL query to retrieve all the records from a table named Employees.

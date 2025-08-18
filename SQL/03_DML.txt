@@ -1,0 +1,78 @@
+3.	DML - (Isert, Update, Delete, Merge)
+DML (Data Manipulation Language) allows you to insert, update, delete, and merge data within existing database tables.
+
+✅ 1. INSERT – Add Data
+Syntax:
+	INSERT INTO table_name (column1, column2, ...)
+VALUES (value1, value2, ...);
+
+Example:
+CREATE TABLE students (
+student_id NUMBER PRIMARY KEY,
+name VARCHAR2(100),
+age NUMBER
+);
+
+INSERT INTO students (student_id, name, age)
+VALUES (1, 'Rahul', 21);
+
+✅ 2. UPDATE – Modify Existing Data
+	Syntax:
+		UPDATE table_name
+SET column1 = value1, column2 = value2
+WHERE condition;
+Example:
+UPDATE students
+SET age = 22
+WHERE student_id = 1;
+
+✅ 3. DELETE – Remove Data
+Syntax:
+DELETE FROM table_name
+WHERE condition;
+Example:
+DELETE FROM students
+WHERE student_id = 1;
+
+✅ 4. MERGE – Insert or Update (UPSERT)
+	Purpose:
+Used to merge data from one table into another, often used for syncing data.
+
+Syntax:
+MERGE INTO target_table T
+USING source_table S
+ON (T.id = S.id)
+WHEN MATCHED THEN
+  UPDATE SET T.col = S.col
+WHEN NOT MATCHED THEN
+  INSERT (id, col) VALUES (S.id, S.col);
+
+Example:
+Step 1: Create Tables
+CREATE TABLE students (
+student_id NUMBER PRIMARY KEY,
+name VARCHAR2(100),
+age NUMBER
+);
+
+CREATE TABLE students_new (
+student_id NUMBER PRIMARY KEY,
+name VARCHAR2(100),
+age NUMBER
+);
+
+Step 2: Insert into students_new
+INSERT INTO students_new VALUES (1, 'Rahul', 22);
+INSERT INTO students_new VALUES (2, 'Sneha', 21);
+
+Step 3: MERGE Data
+MERGE INTO students tgt
+USING students_new src
+ON (tgt.student_id = src.student_id)
+WHEN MATCHED THEN
+  UPDATE SET tgt.name = src.name, tgt.age = src.age
+WHEN NOT MATCHED THEN
+  INSERT (student_id, name, age)
+  VALUES (src.student_id, src.name, src.age);
+
+✅ Inserts student 2 and updates student 1 if already present.

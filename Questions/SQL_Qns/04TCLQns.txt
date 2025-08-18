@@ -1,0 +1,70 @@
+1. COMMIT – Single Transaction
+
+You inserted 3 student records into the students table. The interviewer asks:
+👉 At what point will these records become permanently available to other users – before or after COMMIT?
+
+2. COMMIT – Banking Example
+
+A bank transfer transaction debits ₹5000 from Account A and credits ₹5000 to Account B.
+👉 Why is it important to use COMMIT only after both operations succeed?
+
+3. ROLLBACK – Undo Wrong Insert
+
+You inserted a wrong student record (id=10, name='XYZ', age=99).
+👉 Which TCL command would you use to remove this record before it is saved permanently?
+
+4. ROLLBACK – Multiple DML Statements
+
+You executed 5 INSERT statements in sequence but realized the 3rd one was incorrect.
+👉 If you haven’t committed yet, what will happen if you use a plain ROLLBACK?
+
+5. SAVEPOINT – Partial Rollback
+
+You insert 3 student records:
+
+    • After 1st insert → Create Savepoint A
+
+    • After 2nd insert → Create Savepoint B
+
+    • After 3rd insert → No savepoint
+
+👉 If you ROLLBACK TO Savepoint B, which records will remain and which will be undone?
+
+6. SAVEPOINT – Update + Rollback
+
+You updated the age of all students to +1. Then you created a savepoint. After that, you updated the name of one student incorrectly.
+👉 How would you revert only the last update while keeping the age changes?
+
+7. COMMIT vs. ROLLBACK
+
+You delete all students below age 18, but before committing, your manager tells you this was a mistake.
+👉 What TCL command will restore the deleted rows?
+
+8. Implicit COMMIT
+
+You created a new table student_backup using CREATE TABLE.
+👉 Why can’t you rollback this operation?
+
+9. Real-Life Transaction
+
+In an online shopping system, a user places an order. The transaction includes:
+
+    • Deducting money from wallet
+
+    • Reducing product stock
+
+    • Inserting order details
+
+👉 What will happen if the stock update fails but you already committed the wallet deduction?
+
+10. Multiple Savepoints
+
+You run these operations:
+
+    • Insert record A → SAVEPOINT sp1
+
+    • Insert record B → SAVEPOINT sp2
+
+    • Insert record C → SAVEPOINT sp3
+
+👉 If you ROLLBACK TO sp1 and then COMMIT, which records remain in the database?

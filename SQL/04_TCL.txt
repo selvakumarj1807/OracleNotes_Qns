@@ -1,0 +1,63 @@
+4.	TCL - (Commit, Rollback, SavePoint)
+
+1.	TCL statements are used to manage transactions in a database.
+2.	A transaction is a sequence of one or more SQL statements that Oracle treats as a single unit of work.
+
+✅ 1. COMMIT
+•	Saves all changes made in the current transaction permanently into the database.
+•	Once committed, you cannot rollback those changes.
+
+Example:
+-- Create a table
+CREATE TABLE students (
+    student_id NUMBER,
+    name VARCHAR2(100),
+    age NUMBER
+);
+
+-- Insert a record
+INSERT INTO students VALUES (1, 'Rahul', 21);
+
+-- Save permanently
+COMMIT;
+
+👉 Now the record is permanently stored in the database.
+
+✅ 2. ROLLBACK
+    •	Reverts changes made during the current transaction.
+    •	If you haven’t used COMMIT, you can undo changes with ROLLBACK.
+
+Example:
+-- Insert another record
+INSERT INTO students VALUES (2, 'Sneha', 20);
+
+-- Oops, wrong insert → Undo it
+ROLLBACK;
+
+✅ 3. SAVEPOINTs
+    •	Creates a temporary marker within a transaction.
+    •	You can roll back to a specific savepoint instead of rolling back the entire transaction.
+
+Example:
+-- Insert multiple students
+INSERT INTO students VALUES (3, 'Amit', 22);
+SAVEPOINT sp1;   -- Savepoint created
+
+INSERT INTO students VALUES (4, 'Priya', 19);
+SAVEPOINT sp2;   -- Another savepoint created
+
+INSERT INTO students VALUES (5, 'Ramesh', 23);
+
+-- Rollback only to savepoint sp2
+ROLLBACK TO sp2;
+
+COMMIT;
+
+👉 After this:
+    •	Record with student_id = 3 (Amit) is saved.
+    •	Record with student_id = 4 (Priya) is saved.
+    •	Record with student_id = 5 (Ramesh) is removed because rollback went to sp2.
+
+⚡ Key Notes
+    •	DML (INSERT, UPDATE, DELETE, MERGE) require TCL (COMMIT, ROLLBACK, SAVEPOINT) to confirm or undo.
+    •	DDL (CREATE, DROP, ALTER, TRUNCATE) statements auto-commit → you cannot rollback them.

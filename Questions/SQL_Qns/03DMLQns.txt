@@ -1,0 +1,62 @@
+📌 Sample Table
+
+CREATE TABLE students (
+    student_id NUMBER PRIMARY KEY,
+    name VARCHAR2(100),
+    age NUMBER
+);
+
+-- Insert sample data
+INSERT INTO students VALUES (1, 'Rahul', 21);
+INSERT INTO students VALUES (2, 'Sneha', 20);
+INSERT INTO students VALUES (3, 'Amit', 22);
+INSERT INTO students VALUES (4, 'Priya', 19);
+INSERT INTO students VALUES (5, 'Ramesh', 23);
+
+-- A new table for MERGE scenario
+CREATE TABLE students_new (
+    student_id NUMBER PRIMARY KEY,
+    name VARCHAR2(100),
+    age NUMBER
+);
+
+INSERT INTO students_new VALUES (3, 'Amit Kumar', 23); 
+INSERT INTO students_new VALUES (6, 'Kiran', 20);
+INSERT INTO students_new VALUES (7, 'Meena', 21);
+
+
+Questions:
+----------
+
+1. **INSERT** – A new student named *Arjun* (age 18) joins the college.
+   👉 How would you insert his record into the `students` table?
+
+2. **INSERT (Partial Columns)** – You only know the `student_id = 8` and `name = "Pooja"`, age is not yet available.
+   👉 How would you insert this record?
+
+3. **Multiple INSERTS** – Insert 2 students in a single query: `(9, 'Sahil', 22)` and `(10, 'Anita', 20)`.
+   👉 How would you do this?
+
+4. **UPDATE (Single Student)** – Update Ramesh’s name (`student_id = 5`) to "Ramesh Kumar".
+   👉 How would you update his record?
+
+5. **UPDATE (All Students)** – Increase the age of every student by 1 year.
+   👉 Write the query.
+
+6. **DELETE (Single Student)** – Remove Priya (`student_id = 4`) from the `students` table.
+   👉 Write the query.
+
+7. **DELETE (Multiple Students)** – Remove all students whose age is exactly 20.
+   👉 Write the query.
+
+8. **MERGE (Upsert)** – Sync data from `students_new` to `students`:
+
+   * If a student exists, update their name & age.
+   * If not, insert them.
+     👉 Write the `MERGE` query.
+
+9. **MERGE (Insert Only If Not Exists)** – From `students_new`, insert students into `students` only if they don’t already exist.
+   👉 Write the `MERGE` query.
+
+10. **MERGE (Update Only If Exists)** – From `students_new`, update the existing students in `students`, but do not insert new ones.
+    👉 Write the `MERGE` query.

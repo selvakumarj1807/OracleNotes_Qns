@@ -1,0 +1,43 @@
+2.	DDL - (Create, Alter, Rename, Truncate, Drop)
+DDL (Data Definition Language) is used to define, modify, or delete database schema objects like tables, indexes, views, etc.
+✅ 1. CREATE - Create Table
+	Syntax:
+		CREATE TABLE table_name (
+    			column1 datatype(datalength),
+    			column2 datatype(datalength),
+    			...
+);
+Example:
+	CREATE TABLE students (
+    		stud_id NUMBER,
+    		name VARCHAR2(100),
+    		salary NUMBER
+);
+
+✅ 2. ALTER – Modify Table
+	🔸 Add Column
+		ALTER TABLE students ADD (email VARCHAR2(100));
+	🔸 Modify Column
+		ALTER TABLE students MODIFY (salary NUMBER(10, 2));
+	🔸 Drop Column
+		ALTER TABLE students DROP COLUMN email;
+	🔸 RENAME Column
+		ALTER TABLE students RENAME COLUMN name to studName;
+
+✅ 3. RENAME – Rename a Table
+	Syntax:
+		RENAME old_table_name TO new_table_name;
+	Example:
+		RENAME students TO studentDetails;
+
+✅ 4. TRUNCATE – Remove All Records Quickly (No rollback)
+	Syntax:
+		TRUNCATE TABLE table_name;
+	Example:
+		TRUNCATE TABLE studentDetails;
+
+✅ 5. DROP – Delete Entire Table
+	Syntax:
+		DROP TABLE table_name;
+	Example:
+		DROP TABLE studentDetails;

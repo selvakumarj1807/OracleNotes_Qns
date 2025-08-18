@@ -1,0 +1,29 @@
+1. Create a new table named customer with columns for customer ID, name, city, and phone number.
+(Tests CREATE TABLE syntax)
+
+2. Add a new column email (VARCHAR2(100)) to the customer table.
+(Tests ALTER TABLE – ADD)
+
+3. Change the size of the city column to VARCHAR2(100) in the customer table.
+(Tests ALTER TABLE – MODIFY)
+
+4. Rename the column cust_name to customer_name in the customer table.
+(Tests ALTER TABLE – RENAME COLUMN)
+
+5. Remove the phone column from the customer table.
+(Tests ALTER TABLE – DROP COLUMN)
+
+6. Rename the table customer to client.
+(Tests RENAME command)
+
+7. Delete all records from the client table without removing the table structure.
+(Tests TRUNCATE TABLE)
+
+8. Completely delete the client table from the database.
+(Tests DROP TABLE)
+
+9. Create a table customer_backup with the same structure as customer without copying the data.
+(Tests CREATE TABLE … AS SELECT … WHERE 1=0)
+
+10. Create a table customer_copy and copy all data from the customer table into it.
+(Tests CREATE TABLE … AS SELECT …)
