@@ -1,0 +1,112 @@
+5.	DCL - (Grant, Revoke)
+    DCL (Data Control Language) statements are used to control access (permissions/privileges) to the database.
+
+Two main commands:
+1.	GRANT → Give permission
+2.	REVOKE → Take back permission
+
+✅ 1. Creating Users
+
+    -- Login as SYSDBA
+    sqlplus / as sysdba;
+
+    -- Create User
+    create user USERNAME identified by password;
+
+    -- Grant basic roles so user can connect and create objects
+    grant connect, resource to USERNAME;
+
+👉 CONNECT → lets the user log in – (Sql Developer Tool)
+👉 RESOURCE → lets the user create tables, procedures, etc.
+
+✅ 2. User01 Work (OWNER of the Table)
+
+    -- Check current user
+    select user from dual;
+
+    -- Create table
+    create table studentDetails (
+    studId number,
+    studName varchar2(50)
+    );
+
+    -- Insert sample rows
+    insert into studentDetails values (101, 'Sara');
+    insert into studentDetails values (102, 'Thara');
+    insert into studentDetails values (103, 'Lara');
+
+    -- View rows
+    select * from studentDetails;
+
+✅ 3. Granting Permissions to User02
+    Suppose another user = STUDENTMANAGEMENT.
+    User01 grants permission:
+
+        grant select, insert, update, delete 
+        on studentDetails 
+        to STUDENTMANAGEMENT;
+
+✅ 4. Actions from User02
+
+    -- Check login
+    select user from dual;
+
+    -- Access User01’s table (must use schema.table)
+    select * from USERNAME.studentDetails;
+
+    -- Delete a row
+    delete from USERNAME.studentDetails where studId = 103;
+    commit;
+
+    -- Verify deletion
+    select * from USERNAME.studentDetails;
+
+✅ 5. Revoke Privilege
+
+    -- Now User01 removes DELETE privilege
+    revoke delete on studentDetails from STUDENTMANAGEMENT;
+
+✅ 6. Actions from User02 after Revoke
+
+    -- Try deleting again
+    delete from USERNAME.studentDetails where studId = 102;
+
+✅ 7. Other Privileges You Can Grant
+
+    •	SELECT → read rows
+    •	INSERT → add new rows
+    •	UPDATE → modify rows
+    •	DELETE → remove rows
+    •	REFERENCES → allow foreign key usage
+    •	ALTER → change table definition
+    •	INDEX → create indexes
+
+✅ 8. Special Cases of GRANT/REVOKE
+
+    (a)	Grant/Revoke ALL Privileges
+
+        grant all on studentDetails to STUDENTMANAGEMENT;
+        revoke all on studentDetails from STUDENTMANAGEMENT;
+
+    (b)	Grant/Revoke for All Users (PUBLIC)
+
+        grant all on studentDetails to public;
+        revoke all on studentDetails from public;
+
+    ⚠️ Be careful: PUBLIC = every user in the database.
+
+    (c)	Role-based Privileges
+    
+        -- Create a role
+        create role studentRole;
+
+        -- Assign role to users
+        grant studentRole to user01, user02, user03;
+
+        -- Grant object privileges to role
+        grant all on studentDetails to studentRole;
+
+        -- Revoke privileges from role
+        revoke all on studentDetails from studentRole;
+
+    👉 This is how DBAs manage groups of users easily. Instead of granting to each user, they just manage roles.

@@ -1,0 +1,19 @@
+1. What is the difference between GRANT and REVOKE in Oracle?
+
+2. What is the difference between System Privileges and Object Privileges?
+
+3. How do you grant permission for a user to only read data from a table?
+
+4. What happens if you grant a privilege with WITH GRANT OPTION?
+
+5. How can you remove all privileges from a user on a specific table?
+
+6. What is the difference between granting privileges to a user vs. PUBLIC?
+
+7. What is the difference between granting privileges directly to a user vs. using a ROLE?
+
+8. If a privilege is revoked from a role, what happens to users who have that role?
+
+9. What is the difference between REVOKE and DROP USER in terms of security?
+
+10. Can a user access a table if they only have REFERENCES privilege?
