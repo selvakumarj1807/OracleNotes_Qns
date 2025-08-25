@@ -1,0 +1,27 @@
+6.	Basic Select Statements - (Columns, Column Calculation, Column Concatenation, Column Alias, Order By)
+
+✅ 1. Columns
+	
+    select * from employees;
+	select employee_id, first_name, salary from employees;
+
+✅ 2. Column Calculation - You can perform arithmetic operations on numeric columns.
+	
+    SELECT first_name, salary, salary * 12 
+    FROM employees;
+
+✅ 3. Column Concatenation - You can join (concatenate) two or more columns into one using the || operator.
+
+    select employee_id, first_name || ' ' || last_name from employees;
+
+✅ 4. Column Alias - Aliases rename columns in the output, making results more readable.
+
+    SELECT first_name, salary, salary * 12 as yearlySalary
+    FROM employees;
+
+    SELECT employee_id, first_name || ' ' || last_name as FullName 
+    from employees;
+
+✅ 5. Order By - Results can be sorted using ORDER BY. Default is ascending (ASC); you can also use descending (DESC).
+	
+    SELECT * from employees order by salary;

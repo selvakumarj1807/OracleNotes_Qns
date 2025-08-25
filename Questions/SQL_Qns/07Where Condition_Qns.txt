@@ -1,0 +1,19 @@
+1. What is the difference between = and IN in the WHERE clause? Provide examples.
+
+2. Write a query to find employees who earn a salary less than 12,000 and work in department 10.
+
+3. How would you retrieve all employees whose department is either 20, 30, or 40 using both OR and IN? Which one is more efficient?
+
+4. What is the difference between != and NOT IN in Oracle SQL? Can they produce different results?
+
+5. Write a query to display employees whose commission_pct is missing (NULL) and another query where it is not missing.
+
+6. How do AND, OR, and NOT affect filtering in the WHERE clause? Write one example for each.
+
+7. Write a query to find employees whose first names start with 'J' and another query to find those that do not start with 'J'.
+
+8. What will happen if you use NOT IN with a list that contains a NULL value? Why?
+
+9. Write a query to display employees whose names are exactly four letters long and start with ‘S’.
+
+10. Explain the difference between using LIKE '%son' and LIKE '_son'. Give an example scenario.

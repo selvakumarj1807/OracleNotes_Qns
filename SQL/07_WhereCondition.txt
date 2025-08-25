@@ -1,0 +1,45 @@
+7.	Where Condition - (Comparison Operators, Logical Operators, In, Not In, Is Null, Is Not Null, Like, Not Like)
+
+✅ 1. Comparison Operators - Used to compare column values.
+
+    •	= (equal to)
+    •	!= or <> (not equal to)
+    •	<, <=, >, >= (less/greater than)
+
+    select * from employees where salary > 12000;
+
+✅ 2. Logical Operators
+
+    •	AND → All conditions must be true
+    •	OR → Any condition must be true
+    •	NOT → Negates the condition
+
+    select * from employees where department_id = 90 and job_id = 'AD_PRES';
+    select * from employees where department_id = 90 or job_id = 'AD_PRES';
+    select * from employees where not(department_id = 90 or job_id = 'AD_PRES');
+
+✅ 3. IN and NOT IN
+
+    •	IN → Checks if value matches any in a list
+    •	NOT IN → Excludes values in a list
+
+    select * from employees where employee_id in (100, 102, 104);
+    select * from employees where employee_id not in (100, 102, 104);
+
+✅ 4. IS NULL and IS NOT NULL
+
+    •	Used to check for NULL values (missing data).
+
+    select * from employees where COMMISSION_PCT is null;
+    select * from employees where COMMISSION_PCT is not null;
+
+✅ 5. LIKE and NOT LIKE
+
+    •	The LIKE operator is used for pattern matching in string columns.
+    •	The NOT LIKE operator is used to find values that do not match a pattern.
+    •	% → Matches zero or more characters
+    •	_ → Matches exactly one character
+
+    select * from employees where first_name like 'A%';
+    select * from employees where first_name like 'A_it';
+    select * from employees where first_name not like 'A%';

@@ -1,0 +1,21 @@
+1. What is the difference between SELECT * and selecting specific columns in Oracle SQL?
+
+2. How do you perform arithmetic calculations on numeric columns inside a SELECT statement? Give an example.
+
+3. What operator is used in Oracle SQL to concatenate two or more columns? Can you give an example query?
+
+4. What is the purpose of column aliases? How do you write an alias with spaces in Oracle SQL?
+
+5. What happens if you don’t use an alias for a calculated column in Oracle SQL?
+
+6. Write a query to display employee_id, full name (first name + last name), and yearly salary (monthly salary * 12) from the employees table.
+
+7. How does ORDER BY work in Oracle SQL? What is the default sort order if you don’t specify ASC or DESC?
+
+8. Write an SQL query to display each employee’s ID along with a message that shows their name and department in the 
+    format:
+        100 Steven King works in AD_PRES
+
+9. What will happen if you try to sort data using a column that is not included in the SELECT statement?
+
+10. What is the difference between using || for concatenation and the CONCAT() function in Oracle SQL?
