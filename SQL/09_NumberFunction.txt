@@ -1,0 +1,38 @@
+9.	Number Function - (Round, Trunc, Mod, Power, Abs, Sign, Floor, Ceil)
+
+✅ 1. Round - Rounds number
+	
+    SELECT ROUND(123.556) FROM dual;
+	SELECT ROUND(123.556, 2) FROM dual;
+	SELECT ROUND(123.556, -1) FROM dual; -- rounded to nearest 10
+
+✅ 2. Trunc - Cuts decimals
+	
+    SELECT TRUNC(123.556) FROM dual;
+	SELECT TRUNC(123.556, 2) FROM dual;
+
+✅ 3. Mod – Remainder
+	
+    SELECT MOD(7, 2) FROM dual; -- 7 ÷ 2 → remainder 1
+
+✅ 4. Power – Exponent
+	
+    SELECT POWER(2, 3) FROM dual;
+
+✅ 5. Abs - Absolute value
+	
+    SELECT ABS(-25), ABS(25) FROM dual;
+
+✅ 6. Sign - Sign of number
+    
+    SELECT SIGN(-25) FROM dual;
+    SELECT SIGN(0) FROM dual;
+    SELECT SIGN(100) FROM dual;
+
+✅ 7. Floor - Round down
+
+    SELECT FLOOR(25.75), FLOOR(-25.75) FROM dual;
+
+✅ 8. Ceil - Round up
+    
+    SELECT CEIL(25.75), CEIL(-25.75) FROM dual;

@@ -1,0 +1,63 @@
+8.	Case Manipulation Function - (Length, Concat, Replace, Translate, Reverse, Ltrim, Rtrim, Trim, Lpad, Rpad, Substr, Instr, Ascii, Chr)
+
+✅ 1. Length - Returns the number of characters in a string.
+
+    SELECT LENGTH('Oracle SQL') AS str_length FROM dual;
+
+✅ 2. Concat - Joins two strings together. (For more than 2 strings, use || operator).
+
+    SELECT CONCAT('Hello', ' World') AS result FROM dual;
+    SELECT 'Hello' || ' Oracle' || ' SQL' AS result FROM dual;
+
+✅ 3. Replace - Replaces occurrences of a substring with another substring.
+
+    SELECT REPLACE('Database 101', '101', '202') AS result FROM dual;
+
+✅ 4. Translate - Replaces characters one by one. (Unlike REPLACE which handles substrings).
+
+    SELECT TRANSLATE('12345', '135', 'ABC') AS result FROM dual;
+
+✅ 5. Reverse 
+	
+    SELECT REVERSE('ORACLE') AS result FROM dual;
+
+✅ 6. Ltrim - Removes leading characters (default: spaces).
+	
+    SELECT LTRIM('0001234000', '0') AS result FROM dual;
+
+✅ 7. Rtrim - Removes trailing characters (default: spaces).
+	
+    SELECT RTRIM('0001234000', '0') AS result FROM dual;
+
+✅ 8. Trim - Removes leading and trailing characters (default: spaces).
+	
+    SELECT TRIM('   Oracle   ') AS result FROM dual;
+	SELECT TRIM('0' FROM '0001234000') AS result FROM dual;
+	SELECT RTRIM(LTRIM('0001234000', '0'), '0') AS result FROM dual;
+	SELECT RTRIM(LTRIM('0001234XXX', '0'), 'X') AS result FROM dual;
+
+✅ 9. Lpad - Pads string on the left up to specified length.
+	
+    SELECT LPAD('101', 6, '0') AS result FROM dual;
+
+✅ 10. Rpad - Pads string on the right up to specified length.
+	
+    SELECT RPAD('101', 6, '0') AS result FROM dual;
+
+✅ 11. Substr - Extracts part of a string.
+
+    -- SUBSTR(string, start_position, length)
+    SELECT SUBSTR('OracleSQL', 1, 6) AS result FROM dual;
+    SELECT SUBSTR('OracleSQL', -3, 3) AS result FROM dual;
+
+✅ 12. Instr - Returns the position of a substring in a string.
+	
+    SELECT INSTR('admin@gmail.com', '@') AS pos FROM dual;
+
+✅ 13. Ascii - Returns the ASCII numeric value of a character.
+	
+    SELECT ASCII('A') AS result FROM dual;
+
+✅ 14. Chr - Returns the character for a given ASCII code.
+	
+    SELECT CHR(65) AS result FROM dual;

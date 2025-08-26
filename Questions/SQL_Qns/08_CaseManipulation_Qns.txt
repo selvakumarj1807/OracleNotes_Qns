@@ -1,0 +1,30 @@
+Q1. LENGTH
+Write a query to return the number of characters in the string "Database Management System".
+
+Q2. CONCAT / || Operator
+Combine the first name 'John' and last name 'Doe' into a single string with a space between them.
+
+Q3. REPLACE
+Replace all occurrences of 'SQL' with 'PLSQL' in the string "Oracle SQL Tutorial".
+
+Q4. TRANSLATE
+Convert all digits in "98765" into letters using mapping (9→A, 8→B, 7→C, 6→D, 5→E).
+
+Q5. LTRIM / RTRIM
+Remove all leading zeros from '0001200' and all trailing zeros from '120000'.
+
+Q6. TRIM
+Remove leading and trailing '*' characters from the string '***Oracle***'.
+
+Q7. LPAD / RPAD
+Display employee ID 45 as a 6-digit number with leading zeros (000045).
+Also, pad the string 'EMP' to the right with '*' until it reaches 8 characters.
+
+Q8. SUBSTR
+Extract the domain name (e.g., gmail.com) from the email 'user@gmail.com'.
+
+Q9. INSTR
+Find the position of the second occurrence of 'a' in the string "Database".
+
+Q10. ASCII / CHR
+Return the ASCII code of 'z' and then convert 90 into its corresponding character.

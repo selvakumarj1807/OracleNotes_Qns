@@ -1,0 +1,55 @@
+Q1. ROUND
+
+Round the number 456.789 to:
+
+    1. the nearest integer,
+
+    2. 2 decimal places,
+
+    3. and to the nearest 100.
+
+Q2. TRUNC
+
+Truncate the salary 9876.543 to:
+
+    1. 2 decimal places,
+
+    2. nearest whole number.
+
+Q3. MOD
+
+Find whether a number is even or odd using MOD function.
+(Hint: check remainder after division by 2).
+
+Q4. POWER
+
+Write a query to calculate:
+
+    1. Square of 15
+
+    2. Cube of 7
+
+Q5. ABS
+
+Given values -450 and 450, return their absolute values. Why is ABS() useful in financial applications?
+
+Q6. SIGN
+
+Use SIGN to classify values as negative, zero, or positive for inputs: -99, 0, 256.
+
+Q7. FLOOR
+
+Return the floor values of 99.99 and -99.99. Explain why the result differs for negative numbers.
+
+Q8. CEIL
+
+Return the ceiling values of 99.01 and -99.01. How does Oracle handle negatives here?
+
+Q9. COMBINATION (ROUND + MOD)
+
+Display only those numbers from 1 to 20 that are multiples of 3.
+(Hint: use MOD(number, 3) = 0)
+
+Q10. COMBINATION (TRUNC + POWER)
+
+Find the square root of 144 using POWER, and truncate it to an integer.
