@@ -1,0 +1,66 @@
+Q1. TO_DATE
+
+    An application receives date input as a string '31-12-2024', but your database needs to store it as a proper DATE.
+    👉 Write a query to convert this string into a date datatype.
+
+Q2. TO_DATE with custom format
+
+    You receive a date string in unusual format: '2025-08-28 14:35:00'.
+    👉 Convert it into Oracle DATE using correct format model.
+
+Q3. TO_CHAR - Date Formatting
+
+    Display today’s date in the following format:
+    👉 Thursday, 28th August 2025
+
+Q4. TO_CHAR - Extract Day/Month/Year
+
+    From the employees table, show:
+
+    hire_date
+
+    day of week (MON),
+
+    month number (MM),
+
+    year (YYYY).
+
+Q5. TO_CHAR - Salary Formatting
+
+    From the employees table, display employee salary in this format:
+    👉 1,50,000 (Indian-style formatting).
+
+Q6. TO_CHAR - Week & Year Information
+
+    Display today’s:
+
+    Day of year (DDD),
+
+    Week of month (W),
+
+    Week of year (WW).
+
+Q7. TO_NUMBER - String to Number
+
+    The system receives salaries as text (e.g., '15,000').
+    👉 Convert '15,000' into a number and add 500 to it.
+
+Q8. TO_NUMBER with Format
+
+    Given '12,34,567.89' stored as VARCHAR2, convert it to NUMBER using a proper format model.
+
+Q9. Combine TO_CHAR + TO_DATE
+
+    Convert the string '2025/08/28' into a date, and then display it in the format 28-Aug-2025.
+
+Q10. Real-life Scenario (Report Generation)
+
+    You need to prepare a report that shows each employee’s:
+
+    employee_id
+
+    hire_date formatted as DD-Mon-YYYY
+
+    salary formatted as 99,99,999.00
+
+    👉 Which conversion functions would you use?

@@ -1,0 +1,36 @@
+11.	Conversion Function - (to_char, to_number, to_date)
+
+Conversion functions are built-in functions that convert a value from one datatype to another.
+
+✅ 1. TO_DATE - String → Date
+
+    select to_date('11/08/2025', 'DD/MM/YYYY') from dual;
+    select to_date('11:2025:08', 'DD:YYYY:MM') from dual;
+
+✅ 2. TO_CHAR - Date/Number → String
+
+    select sysdate from dual;
+    select to_char(sysdate, 'DD/MM/YYYY') from dual;
+    select hire_date, to_char(hire_date, 'DD:MM:YYYY') from employees;
+    select to_char(to_date('2022-8-7', 'YYYY-MM-DD'), 'DD/MM/YYYY') from dual;
+
+    -- Basics Format
+    select to_char(sysdate, 'DD/MM/YYYY') from dual;
+    select to_char(sysdate, 'D') from dual; -- Week day
+    select to_char(sysdate, 'DD') from dual; -- month day
+    select to_char(sysdate, 'DDD') from dual; -- Year Day
+    select to_char(sysdate, 'MM') from dual;
+    select to_char(sysdate, 'Mon'), to_char(sysdate, 'MON') from dual;
+    select to_char(sysdate, 'MONTH') from dual;
+    select to_char(sysdate, 'Year') from dual;
+    select to_char(sysdate, 'Day') from dual;
+    select to_char(sysdate, 'DDSPTH') from dual;
+    select to_char(sysdate, 'W') from dual;
+    select to_char(sysdate, 'WW') from dual;
+    select to_char(systimestamp, 'HH:mi:ss AM') from dual;
+    select 8000 , to_char(8000, '9G999')from dual; -- 9,000
+    select salary, to_char(salary, '9G99G999') from employees; -- 1,50,000
+
+✅ 3. TO_NUMBER - String → Number
+
+	select to_number('8,000', '9G999') from dual;

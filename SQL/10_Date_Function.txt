@@ -1,0 +1,46 @@
+10.	Date Function - (Add_months, Months_between, Next_day, Last_day)
+
+In Oracle, DATE is a data type that stores date and time information 
+(day, month, year, hour, minute, second).
+
+SELECT SYSDATE FROM dual;
+
+SELECT SYSTIMESTAMP FROM dual;
+
+select date '2025-8-20', TIMESTAMP '2025-08-20 14:35:00' from dual;
+
+CREATE TABLE test_date_time (
+   id NUMBER,
+   today DATE,
+   ts TIMESTAMP WITH TIME ZONE
+);
+
+INSERT INTO test_date_time (id, today, ts)
+VALUES (1, SYSDATE, SYSTIMESTAMP);
+
+INSERT INTO test_date_time (id, today, ts)
+VALUES (
+   2,
+   DATE '2025-08-20',
+   TIMESTAMP '2025-08-20 10:15:00'
+);
+
+select * from test_date_time;
+
+✅ 1. ADD_MONTHS(date, n) - Adds or subtracts months from a given date.
+
+	SELECT ADD_MONTHS(SYSDATE, 2) AS after_two_months,
+        	ADD_MONTHS(SYSDATE, -2) AS before_two_months
+FROM dual;
+
+✅ 2. MONTHS_BETWEEN(date1, date2) - Returns the number of months between two dates.
+
+    SELECT MONTHS_BETWEEN(DATE '2025-07-18', DATE '1999-07-18') AS months_diff FROM dual;
+
+✅ 3. NEXT_DAY(date, 'DAY') - Returns the date of the next occurrence of a weekday.
+
+	SELECT NEXT_DAY(SYSDATE, 'FRIDAY') AS next_friday FROM dual;
+
+✅ 4. LAST_DAY(date) - Returns the last day of the month for the given date.
+	
+    SELECT LAST_DAY(SYSDATE) AS month_end FROM dual;

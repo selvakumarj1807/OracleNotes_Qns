@@ -1,0 +1,19 @@
+1. Find employees whose probation period (3 months after hire date) ended before today.
+
+2. Find employees who have completed exactly 20 years (240 months) in the company.
+
+3. For each employee, find the first Friday after their hire date.
+
+4. Display the last day of the month in which each employee was hired.
+
+5. Find employees who were hired in the current month.
+
+6. List employees who joined in the last 6 months.
+
+7. Find the salary review date for each employee (3 Months after hire date).
+
+8. Find employees who were hired on a Monday.
+
+9. Find the quarter-end date for the quarter in which each employee was hired.
+
+10. Show the date after adding -3 months to 15-MAR-2024.
