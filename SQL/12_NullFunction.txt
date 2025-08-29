@@ -1,0 +1,35 @@
+12.	Null Function - (Nvl, Nvl2, Nullif, Coalesce)
+
+    NULL means missing or unknown value.
+
+✅ 1. Nvl - NVL(expr1, expr2)
+
+    •	If expr1 is NULL, it returns expr2. Otherwise, it returns expr1
+
+    SELECT first_name, commission_pct, NVL(commission_pct, 0) AS commission FROM employees;
+
+✅ 2. Nvl2 - NVL2(expr1, expr2, expr3)
+
+    •	If expr1 is NOT NULL → return expr2.
+    •	If expr1 is NULL → return expr3.
+
+    SELECT first_name, commission_pct, 
+        NVL2(commission_pct, 'Has Commission', 'No Commission') AS status
+    FROM employees;
+
+✅ 3. Nullif - NULLIF(expr1, expr2)
+
+    •	Returns NULL if expr1 = expr2.
+    •	Otherwise, returns expr1.
+
+    SELECT NULLIF(100, 100) AS result1, 
+        NULLIF(100, 200) AS result2
+    FROM dual;
+
+✅ 4. Coalesce - COALESCE(expr1, expr2, …, exprN)
+
+    •	Returns the first non-NULL value.
+
+    SELECT first_name,
+        COALESCE(phone_number, email, 'No Contact') AS contact
+    FROM employees;

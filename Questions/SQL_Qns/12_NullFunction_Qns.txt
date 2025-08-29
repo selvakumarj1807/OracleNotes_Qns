@@ -1,0 +1,20 @@
+1. Write a query to display employee names and their **annual salary**, treating `commission_pct` as `0` if NULL.
+
+2. Display employee names and calculate **bonus amount**: if `commission_pct` exists → `10% of salary`, else `5% of salary` (use `NVL2`).
+
+3. Calculate **profit margin** as `salary / expenses`, avoiding division by zero using `NULLIF` (assume `commission_pct` as expenses).
+
+4. Show employee names and calculate **total pay** as `salary + first available value among commission_pct, manager_id, department_id` (use `COALESCE`).
+
+5. Write a query to calculate **incentive** as `salary * commission_pct`. If commission is NULL, use a default `20%`.
+
+6. Calculate **net salary** as `salary - deductions`, treating NULL deductions as `0` (assume `manager_id` as deductions).
+
+7. Calculate **performance score**: if bonus exists (`commission_pct` not NULL), increase salary by 10%, else decrease by 10% (use `NVL2`).
+
+8. Write a query to calculate **adjusted salary** as `salary + first available allowance` (assume `department_id`, `manager_id`, `commission_pct` in that order).
+
+9. Calculate **tax amount** as `salary * tax_rate`, treating NULL tax\_rate as `10%` (assume `commission_pct` as tax\_rate).
+
+10. Compare `salary` (target) and `commission_pct` (achieved). If both are equal return `NULL`, else return `achieved` (use `NULLIF`).
+
